@@ -1,3 +1,30 @@
+==1.3.1==
+Bugfix
+
+* Added config validation for Reference-Prefix
+
+Maintenance
+
+* revert the revertion for editing the invoice address
+* added missing remark message to the order template of azure theme > thx @vilmal
+
+==1.3.0==
+New Features
+
+* we split onlinebanktransfer payment methods into their own checkout entries
+* configurable transaction status forwarding log
+
+Bugfixes
+
+* force sending article list if configured
+* fix configuration export delivering wrong XML
+
+Maintenance
+
+* added option to use sha2-384 for hashing
+* added some security related improvements
+* remove deprecated mapTestClassNameToCoveredClassName > thx @lambreva
+
 ==1.2.1==
 Bugfixes
 
