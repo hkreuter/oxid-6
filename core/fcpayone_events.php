@@ -608,7 +608,11 @@ class fcpayone_events
     {
         $aTables = oxDb::getDb()->getAll("SHOW TABLES LIKE '{$sTableName}'");
         if (!$aTables || count($aTables) == 0) {
-            oxDb::getDb()->Execute($sQuery);
+            try {
+                oxDb::getDb()->Execute($sQuery);
+            } catch (\Exception $e) {
+                Reg
+            }
             return true;
         }
         return false;
@@ -632,7 +636,7 @@ class fcpayone_events
             try {
                 oxDb::getDb()->Execute($sQuery);
             } catch (Exception $e) {
-
+                \OxidEsales\Eshop\Core\Registry::getLogger()->error($sQuery);
             }
             return true;
         }
